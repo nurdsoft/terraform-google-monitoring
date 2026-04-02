@@ -55,13 +55,13 @@ The project assumes the following:
 - Terraform version `>= 1.3.0`
 - (Optional - for local testing) A basic understanding of [Make](https://www.gnu.org/software/make/manual/make.html#Introduction)
   - Make version `>= GNU Make 3.81`
-  - **Important Note**: This project includes a [Makefile](https://github.com/nurdsoft/gcp-monitoring-template/blob/main/Makefile) to speed up local development in Terraform. The `make` targets act as a wrapper around Terraform commands. As such, `make` has only been tested/verified on **Linux/Mac OS**. Though, it is possible to [install make using Chocolatey](https://community.chocolatey.org/packages/make), we **do not** guarantee this approach as it has not been tested/verified. You may use the commands in the [Makefile](https://github.com/nurdsoft/gcp-monitoring-template/blob/main/Makefile) as a guide to run each Terraform command locally on Windows.
+  - **Important Note**: This project includes a [Makefile](https://github.com/nurdsoft/terraform-google-monitoring/blob/main/Makefile) to speed up local development in Terraform. The `make` targets act as a wrapper around Terraform commands. As such, `make` has only been tested/verified on **Linux/Mac OS**. Though, it is possible to [install make using Chocolatey](https://community.chocolatey.org/packages/make), we **do not** guarantee this approach as it has not been tested/verified. You may use the commands in the [Makefile](https://github.com/nurdsoft/terraform-google-monitoring/blob/main/Makefile) as a guide to run each Terraform command locally on Windows.
 
 ---
 
 ## Test
 
-**Important Note**: This project includes a [Makefile](https://github.com/nurdsoft/gcp-monitoring-template/blob/main/Makefile) to speed up local development in Terraform. The `make` targets act as a wrapper around Terraform commands. As such, `make` has only been tested/verified on **Linux/Mac OS**. Though, it is possible to [install make using Chocolatey](https://community.chocolatey.org/packages/make), we **do not** guarantee this approach as it has not been tested/verified. You may use the commands in the [Makefile](https://github.com/nurdsoft/gcp-monitoring-template/blob/main/Makefile) as a guide to run each Terraform command locally on Windows.
+**Important Note**: This project includes a [Makefile](https://github.com/nurdsoft/terraform-google-monitoring/blob/main/Makefile) to speed up local development in Terraform. The `make` targets act as a wrapper around Terraform commands. As such, `make` has only been tested/verified on **Linux/Mac OS**. Though, it is possible to [install make using Chocolatey](https://community.chocolatey.org/packages/make), we **do not** guarantee this approach as it has not been tested/verified. You may use the commands in the [Makefile](https://github.com/nurdsoft/terraform-google-monitoring/blob/main/Makefile) as a guide to run each Terraform command locally on Windows.
 
 ```sh
 gcloud init # https://cloud.google.com/docs/authentication/gcloud
@@ -87,10 +87,10 @@ Contributions are always welcome. As such, this project uses the `main` branch a
 
 ```sh
 # Using SSH
-$ git clone git@github.com:nurdsoft/gcp-monitoring-template.git
+$ git clone git@github.com:nurdsoft/terraform-google-monitoring.git
 
 # Using HTTPS
-$ git clone https://github.com/nurdsoft/gcp-monitoring-template.git
+$ git clone https://github.com/nurdsoft/terraform-google-monitoring.git
 ```
 
 **Step 2**. Checkout a feature branch: `git checkout -b feature/abc`.
@@ -123,7 +123,7 @@ $ git push --set-upstream origin feature/abc
 
 ```hcl
 module "monitoring" {
-  source = "git::https://github.com/nurdsoft/gcp-monitoring-template.git?ref=main"
+  source = "git::https://github.com/nurdsoft/terraform-google-monitoring.git?ref=main"
 
   # Enable all modules
   enable_pubsub         = true
@@ -173,7 +173,7 @@ You can enable only the components you need:
 ```hcl
 # Only Pub/Sub and Alert Policies
 module "monitoring" {
-  source = "git::https://github.com/nurdsoft/gcp-monitoring-template.git?ref=main"
+  source = "git::https://github.com/nurdsoft/terraform-google-monitoring.git?ref=main"
 
   enable_pubsub         = true
   enable_alert_policies = true

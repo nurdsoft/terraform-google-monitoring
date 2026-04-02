@@ -1,7 +1,7 @@
 # Complete example demonstrating all monitoring components
 
 module "monitoring" {
-  source = "../.."
+  source = "git::https://github.com/nurdsoft/terraform-google-monitoring.git?ref=v1.0.0"
 
   # Enable all modules
   enable_pubsub         = true
